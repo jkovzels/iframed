@@ -12,6 +12,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- test: GTM-5LX3TJL -->
 <!-- smartfit GTM-TLKSDT9 -->
 <!-- End Google Tag Manager -->
+	
+	<style>
+		button {
+			padding-bottom: 20px;
+			padding-right: 20px;
+		}
+	</style>
 </head>
 
 <body>
@@ -24,22 +31,45 @@ I've beed iframed
 <button id="widget_loaded">widget_loaded</button>
 <br/>
 <button id="widget_opened">widget_opened</button>
+<br/>
+<button id="height_set">height_set</button>
+<br/>
+<button id="result_shown">result_shown</button>
+	
 <script>
-	var customEvent1Handler = function customEvent1Handler(){
-	 window.dataLayer = window.dataLayer || [];
-	 window.dataLayer.push({
-	 'event': 'widget_initialization',
-	 'event_action': 'widget_loaded'
-	 });
-	}
-	var customEvent1 = document.getElementById('widget_loaded');
-	document.getElementById('widget_opened').addEventListener('click', function widget_opened(){
+var customEvent1Handler = function customEvent1Handler(){
+ window.dataLayer = window.dataLayer || [];
+ window.dataLayer.push({
+ 'event': 'widget_initialization',
+ 'event_action': 'widget_loaded'
+ });
+}
+var customEvent1 = document.getElementById('widget_loaded');
+customEvent1.addEventListener('click', customEvent1Handler);
+
+document.getElementById('widget_opened').addEventListener('click', function widget_opened(){
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
-	 'event': 'user_action',
-	 'event_action': 'widget_opened'
-	 });
-	});
+ 'event': 'user_action',
+ 'event_action': 'widget_opened'
+ });
+});
+	
+document.getElementById('height_set').addEventListener('click', function height_set(){
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+ 'event': 'user_action',
+ 'event_action': 'height_set'
+ });
+});
+document.getElementById('result_shown').addEventListener('click', function result_shown(){
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+ 'event': 'user_action',
+ 'event_action': 'result_shown'
+ });
+});
+	
 </script>
 </body>
 </html>
