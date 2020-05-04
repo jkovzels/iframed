@@ -21,7 +21,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- End Google Tag Manager (noscript) -->
 I've beed iframed
 <br/>
-<button id="customEvent1">Custome Event 1</button>
+<button id="widget_loaded">widget_loaded</button>
+<br/>
+<button id="widget_opened">widget_opened</button>
 <script>
 	var customEvent1Handler = function customEvent1Handler(){
 	 window.dataLayer = window.dataLayer || [];
@@ -30,9 +32,14 @@ I've beed iframed
 	 'event_action': 'widget_loaded'
 	 });
 	}
-	var customEvent1 = document.getElementById('customEvent1');
-	customEvent1.addEventListener('click', customEvent1Handler);
-
+	var customEvent1 = document.getElementById('widget_loaded');
+	document.getElementById('widget_opened').addEventListener('click', function widget_opened(){
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+	 'event': 'user_action',
+	 'event_action': 'widget_opened'
+	 });
+	});
 </script>
 </body>
 </html>
