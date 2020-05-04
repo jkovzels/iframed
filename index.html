@@ -17,7 +17,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LX3TJL"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-	I've beed iframed
+I've beed iframed
+<br/>
+<button id="customEvent1">Custome Event 1</button>
+<script>
+	var customEvent1Handler = function customEvent1Handler(){
+	 window.dataLayer = window.dataLayer || [];
+	 window.dataLayer.push({
+	 'event': 'widget_initialization',
+	 'event_action': 'widget_loaded'
+	 });
+	}
+	var customEvent1 = document.getElementId('customEvent1');
+	customEvent1.addEventListener('click', customEvent1Handler);
+
+</script>
 </body>
 </html>
 
