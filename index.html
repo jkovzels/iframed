@@ -29,6 +29,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- End Google Tag Manager (noscript) -->
 I've beed iframed
 <br/>
+<button id="setup_context">setup_context</button>
+<br/>
 <button id="widget_loaded">widget_loaded</button>
 <br/>
 <button id="widget_opened">widget_opened</button>
@@ -38,36 +40,37 @@ I've beed iframed
 <button id="result_shown">result_shown</button>
 	
 <script>
-var customEvent1Handler = function customEvent1Handler(){
- window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
+
+document.getElementById('setup_context').addEventListener('click',  setup_context(){
  window.dataLayer.push({
- 'event': 'widget_initialization',
- 'event_action': 'widget_loaded'
+'model_name': 'Model T',
+'model_code': '(MTB) - Model T Black'
  });
-}
-var customEvent1 = document.getElementById('widget_loaded');
-customEvent1.addEventListener('click', customEvent1Handler);
+});
+	
+document.getElementById('widget_loaded').addEventListener('click',  widget_loaded(){
+ window.dataLayer.push({
+ 'event': 'widget_loaded'
+ });
+});
 
 document.getElementById('widget_opened').addEventListener('click', function widget_opened(){
-window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
- 'event': 'user_action',
- 'event_action': 'widget_opened'
+ 'event': 'widget_opened'
  });
 });
 	
 document.getElementById('height_set').addEventListener('click', function height_set(){
-window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
- 'event': 'user_action',
- 'event_action': 'height_set'
+'event': 'height_set',
+'height': 175
  });
 });
 document.getElementById('result_shown').addEventListener('click', function result_shown(){
-window.dataLayer = window.dataLayer || [];
+
 window.dataLayer.push({
- 'event': 'user_action',
- 'event_action': 'result_shown'
+ 'event': 'result_shown'
  });
 });
 	
