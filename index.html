@@ -42,14 +42,14 @@ I've beed iframed
 <script>
 window.dataLayer = window.dataLayer || [];
 
-document.getElementById('setup_context').addEventListener('click',  setup_context(){
+document.getElementById('setup_context').addEventListener('click',  function setup_context(){
  window.dataLayer.push({
 'model_name': 'Model T',
 'model_code': '(MTB) - Model T Black'
  });
 });
 	
-document.getElementById('widget_loaded').addEventListener('click',  widget_loaded(){
+document.getElementById('widget_loaded').addEventListener('click', function widget_loaded(){
  window.dataLayer.push({
  'event': 'widget_loaded'
  });
