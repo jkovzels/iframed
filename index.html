@@ -45,7 +45,9 @@ window.dataLayer = window.dataLayer || [];
 document.getElementById('setup_context').addEventListener('click',  function setup_context(){
  window.dataLayer.push({
 'model_name': 'Model T',
-'model_code': '(MTB) - Model T Black'
+'model_code': '(MTB) - Model T Black',
+'parent_url': document.parent.location.href,
+'parent_title': document.parent.title
  });
 });
 	
@@ -55,7 +57,6 @@ document.getElementById('widget_loaded').addEventListener('click', function widg
 'label': 'label_value_in_widget_loaded',
 'eventLabel': 'eventLabelInWidgetLoaded',
 '_label': '_labelInWidgetLoaded',
-	 
  });
 });
 
